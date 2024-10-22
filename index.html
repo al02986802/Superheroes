@@ -1,0 +1,13 @@
+<h1>Lista de Superhéroes</h1>
+<a href="/create">Crear nuevo superhéroe</a>
+<ul>
+    {% for hero in superheroes %}
+    <li>
+        <strong>{{ hero.hero_name }}</strong> ({{ hero.real_name }}) <br>
+        <img src="{{ hero.photo_url }}" alt="{{ hero.hero_name }}" width="100"><br>
+        {{ hero.info }} <br>
+        <a href="/edit/{{ loop.index0 }}">Editar</a> |
+        <a href="/delete/{{ loop.index0 }}">Eliminar</a>
+    </li>
+    {% endfor %}
+</ul>
